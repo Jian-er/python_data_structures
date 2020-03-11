@@ -82,22 +82,63 @@
 '''
 
 
-def shellSort(alist):
-    sublistcount=len(alist)//2
-    while sublistcount>0:
-        for startposition in range(sublistcount):
-            gapInsertionSort(alist,startposition,sublistcount)
-        print('alist:',alist)
-        sublistcount=sublistcount//2
-def gapInsertionSort(alist, start, gap):
-    for i in range(start + gap, len(alist), gap):
-        currentValue = alist[i]
+# def shellSort(alist):
+#     sublistcount=len(alist)//2
+#     while sublistcount>0:
+#         for startposition in range(sublistcount):
+#             gapInsertionSort(alist,startposition,sublistcount)
+#         print('alist:',alist)
+#         sublistcount=sublistcount//2
+# def gapInsertionSort(alist, start, gap):
+#     for i in range(start + gap, len(alist), gap):
+#         currentValue = alist[i]
+#
+#         pos = i
+#         while pos > 0 and alist[pos - 1] > currentValue:
+#             alist[pos] = alist[pos - gap]
+#             pos = pos - gap
+#         alist[pos] = currentValue
+#     return  alist
+# alist=[54,26,93,17,77,31,44,55,20]
+# shellSort(alist)
 
-        pos = i
-        while pos > 0 and alist[pos - 1] > currentValue:
-            alist[pos] = alist[pos - gap]
-            pos = pos - gap
-        alist[pos] = currentValue
-    return  alist
-alist=[54,26,93,17,77,31,44,55,20]
-shellSort(alist)
+
+"""
+    归并排序
+"""
+
+# def mergeSort(alist):
+#     if len(alist)>1:
+#         mid = len(alist)//2
+#         leftHalf = alist[:mid]
+#         rightHalf = alist[mid:]
+#
+#         mergeSort(leftHalf)
+#         mergeSort(rightHalf)
+#
+#         i = 0
+#         j = 0
+#         k = 0
+#         while i< len(leftHalf) and j < len(rightHalf):
+#             if leftHalf[i] < rightHalf[j]:
+#                 alist[k] = leftHalf[i]
+#                 i += 1
+#             else:
+#                 alist[k] = rightHalf[j]
+#                 j += 1
+#
+#             k += 1
+#         while i < len(leftHalf):
+#             alist[k] = leftHalf[i]
+#             i += 1
+#             k += 1
+#         while j < len(rightHalf):
+#             alist[k] = rightHalf[j]
+#             j += 1
+#             k += 1
+#
+# alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+# mergeSort(alist)
+# print(alist)
+
+
